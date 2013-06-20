@@ -212,6 +212,43 @@
         Name="BlogPosts"
         EntitySet="BlogPostsSet" />
     </AssociationSet>
+    <QueryOperation
+      Name="PublishedBlogPosts"
+      ReturnType="BlogPosts*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="IsDraft" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ConstantExpression
+                Value="False"
+                ResultType=":Boolean" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="BlogPostsSet" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperation.SortCriteria>
+        <SortCriterion
+          Direction="Descending">
+          <ChainExpression>
+            <MemberExpression
+              Member="PublishedDateTime" />
+          </ChainExpression>
+        </SortCriterion>
+      </QueryOperation.SortCriteria>
+    </QueryOperation>
   </EntityContainer>
   <DataService
     Name="ApplicationDataMapping"

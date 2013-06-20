@@ -8,9 +8,6 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectDependencies) = postSolution
-		{83B86C81-B7D5-45E5-850D-C56430DF6F7F}.0 = {FABBC880-3EEA-4CF7-88EA-E328B04A007C}
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0B78B8C5-45BC-47C1-850E-31C0CCB381CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0B78B8C5-45BC-47C1-850E-31C0CCB381CE}.Debug|Any CPU.Build.0 = Debug|Any CPU

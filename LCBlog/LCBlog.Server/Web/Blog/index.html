@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Let's Code Blog</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+    <h1>Welcome to the Blog
+    </h1>
+    <div class="posts">
+    </div>
+
+    <script src="Scripts/jquery-2.0.2.min.js"></script>
+    <script src="Scripts/Reader.js"></script>
+    <script>
+        $(function () {
+            $("div.posts").loadAllBlogPosts();
+        });
+    </script>
+</body>
+</html>
