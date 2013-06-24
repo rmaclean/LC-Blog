@@ -7,16 +7,20 @@ namespace LightSwitchApplication
 {
     public class BlogController : ApiController
     {
-        public IEnumerable<BlogPosts> Get()
+        public IEnumerable<BlogPost> Get()
         {
             using (var serverContext = ServerApplicationContext.CreateContext())
             {
-                var posts = serverContext.DataWorkspace.ApplicationData.BlogPostsSet.GetQuery().Execute();
-                var result = (from p in posts
-                              where p.IsDraft == false
-                              select p).ToArray();
+                var posts = serverContext.DataWorkspace.ApplicationData.PublishedBlogPosts().Execute();
 
-                return result;
+                return posts.Select(_ => new BlogPost()
+                {
+                    Author = _.Author,
+                    Body = _.Body,
+                    Id = _.Id,
+                    PublishedDateTime = _.PublishedDateTime,
+                    Title = _.Title,
+                });
             }
         }
     }

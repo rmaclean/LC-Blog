@@ -5,8 +5,8 @@
 
     $.fn.loadAllBlogPosts = function () { 
         var element = this;
-        $.getJSON("/ApplicationData.svc/BlogPostsSet", function (blogPosts) {
-            $.each(blogPosts.value, function (index, blogPost) {
+        $.getJSON("/api/blog", function (blogPosts) {
+            $.each(blogPosts, function (index, blogPost) {
                 var div = document.createElement("div");
                 div.classList.add("title");
                 div.innerText = blogPost.Title;
