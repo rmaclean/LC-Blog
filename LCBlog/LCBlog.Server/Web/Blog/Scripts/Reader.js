@@ -1,21 +1,17 @@
 ﻿/// <reference path="jquery-2.0.2.js" />
 
-(function ($, undefined) {
+(function (blogReader, $, undefined) {
     "use strict";
 
-    $.fn.loadAllBlogPosts = function () { 
-        var element = this;
-        $.getJSON("/api/blog", function (blogPosts) {
-            $.each(blogPosts, function (index, blogPost) {
-                var div = document.createElement("div");
-                div.classList.add("title");
-                div.innerText = blogPost.Title;
-
-                element.append(div);
-            });
-        });
-
-        return this;
+    blogReader.config = {
+        url: "/api/blog",
+        allBlogPostsCallback : null
     };
 
-})(jQuery);
+    blogReader.loadAllBlogPosts = function () {
+        $.getJSON(blogReader.config.url, function (blogPosts) {
+            blogReader.config.allBlogPostsCallback(blogPosts);
+        });
+    };
+
+})(window.blogReader = window.blogReader || {}, jQuery);

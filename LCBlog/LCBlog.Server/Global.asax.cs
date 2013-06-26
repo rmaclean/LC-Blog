@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Web.Routing;
 using System.Web.Http;
+using LightSwitchApplication.Areas.HelpPage;
+using System.Web.Mvc;
 
 namespace LightSwitchApplication
 {
@@ -9,7 +11,8 @@ namespace LightSwitchApplication
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            RouteTable.Routes.MapHttpRoute("DefaultApi", "api/{controller}/{id}", new { id = System.Web.Http.RouteParameter.Optional });
+            RouteTable.Routes.MapHttpRoute(name: "DefaultApi", routeTemplate: "api/{controller}/{type}", defaults: new { type = RouteParameter.Optional });
+            AreaRegistration.RegisterAllAreas();
         }
 
         protected void Session_Start(object sender, EventArgs e)
