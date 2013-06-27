@@ -1,0 +1,30 @@
+﻿body {
+  background-color: #fff6e0;
+  color: #000000;
+  font-family: 'Segoe UI';
+  font-weight: lighter;
+}
+h1 {
+  color: #6e00c7;
+}
+h2 {
+  color: #6e00c7;
+}
+div.content {
+  border: 1px solid #c3c3c3;
+  background-color: #f6f6f6;
+  min-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+div.footer {
+  background-color: #cca76c;
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+div.footer a {
+  color: white;
+  text-decoration: none;
+}

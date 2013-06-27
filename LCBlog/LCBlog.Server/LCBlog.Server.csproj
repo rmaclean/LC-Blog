@@ -296,6 +296,12 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
+    <Content Include="Web\Blog\Content\blog.css">
+      <DependentUpon>blog.less</DependentUpon>
+    </Content>
+    <Content Include="Web\Blog\Content\blog.min.css">
+      <DependentUpon>blog.less</DependentUpon>
+    </Content>
     <Content Include="Web\Blog\Scripts\handlebars.js" />
     <Content Include="Web\Blog\Scripts\handlebars.min.js" />
     <Content Include="Web\Blog\Scripts\handlebars.runtime.js" />
@@ -312,6 +318,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Web\Blog\Content\blog.less" />
     <None Include="Web\Blog\Scripts\jquery-2.0.2.intellisense.js" />
     <Content Include="Web\Blog\index.html" />
     <Content Include="Web\Blog\Scripts\jquery-2.0.2.js" />

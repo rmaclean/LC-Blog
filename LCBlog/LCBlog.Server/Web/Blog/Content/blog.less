@@ -1,0 +1,47 @@
+﻿@backgroundColour: #FFF6E0;
+@fontColour: black;
+@highlightColour: #6E00C7;
+@backgroundColour2: #CCA76C;
+@lighterBackground: #f6f6f6;
+
+body
+{
+    background-color: @backgroundColour;
+    color: @fontColour;
+    font-family: 'Segoe UI';
+    font-weight: lighter;
+}
+
+h1
+{
+    color: @highlightColour;
+}
+
+h2
+{
+    color: @highlightColour;
+}
+
+div.content
+{
+    border: 1px solid darken(@lighterBackground, 20%);
+    background-color: @lighterBackground;
+    min-width: 800px;    
+    margin: 0 auto;
+    padding: 10px;
+}
+
+div.footer
+{
+    background-color: @backgroundColour2;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    padding-left: 10px;
+
+    a
+    {        
+        color:white;
+        text-decoration:none;
+    }
+}
